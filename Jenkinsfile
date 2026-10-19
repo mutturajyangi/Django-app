@@ -6,7 +6,7 @@ pipeline {
         // IMAGE_NAME = "047719618727.dkr.ecr.us-east-1.amazonaws.com/md-dj-demo"
         IMAGE_TAG = "latest"
         CONTAINER = "django-container"
-        PORT = "8000"
+        PORT = "8080"
         APP_NAME = "multi-container-app"
     }
     
