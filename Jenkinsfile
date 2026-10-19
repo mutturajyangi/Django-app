@@ -23,7 +23,7 @@ pipeline {
             }
         }
 
-        stage ('Push To Docker Hub') {
+        stage ('Push To Docker my Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds',usernameVariable: 'DOCKER_USER',passwordVariable: 'DOCKER_PASS')]) {
                     sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
@@ -62,7 +62,7 @@ pipeline {
         //     '''
         //   }
         // }
-        
+
         // stage ('Deploy to Kubernetes') {
         //   steps {
         //     sh '''
