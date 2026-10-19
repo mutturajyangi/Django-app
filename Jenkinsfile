@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "sun113/django-app"
+        IMAGE_NAME = "mutturajyangi/django-app"
         // IMAGE_NAME = "047719618727.dkr.ecr.us-east-1.amazonaws.com/md-dj-demo"
         IMAGE_TAG = "latest"
         CONTAINER = "django-container"
@@ -40,28 +40,29 @@ pipeline {
         //     }
         // }
 
-        stage ('Deploy to EC2') {
-        //   input {
-        //     message "Deploying Docker container to EC2."
-        //     ok "Deploy"
+        // stage ('Deploy to EC2') {
+        // //   input {
+        // //     message "Deploying Docker container to EC2."
+        // //     ok "Deploy"
+        // //   }
+        //   steps {
+        //     sh '''
+        //         echo "Deploying to EC2..."
+        //         echo "Pulling latest image from Docker Hub..."
+        //         docker pull $IMAGE_NAME:$IMAGE_TAG
+
+        //         echo "Stopping existing container (if any)..."
+        //         docker stop $CONTAINER || true
+
+        //         echo "Removing existing container (if any)..."
+        //         docker rm $CONTAINER || true
+
+        //         echo "Running new container..."
+        //         docker run -d --name $CONTAINER -p $PORT:$PORT $IMAGE_NAME:$IMAGE_TAG
+        //     '''
         //   }
-          steps {
-            sh '''
-                echo "Deploying to EC2..."
-                echo "Pulling latest image from Docker Hub..."
-                docker pull $IMAGE_NAME:$IMAGE_TAG
-
-                echo "Stopping existing container (if any)..."
-                docker stop $CONTAINER || true
-
-                echo "Removing existing container (if any)..."
-                docker rm $CONTAINER || true
-
-                echo "Running new container..."
-                docker run -d --name $CONTAINER -p $PORT:$PORT $IMAGE_NAME:$IMAGE_TAG
-            '''
-          }
-        }
+        // }
+        
         // stage ('Deploy to Kubernetes') {
         //   steps {
         //     sh '''
